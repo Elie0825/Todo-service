@@ -1,0 +1,21 @@
+﻿{
+  "info": { "name": "Todo Service", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "item": [
+    { "name": "Create Todo",
+      "request": { "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{base}}/api/todos", "host": ["{{base}}"], "path": ["api","todos"] },
+        "body": { "mode": "raw",
+          "raw": "{\n  \"title\": \"Plugga\",\n  \"description\": \"Spring + Mongo\",\n  \"status\": \"TODO\",\n  \"dueDate\": \"2025-09-30\"\n}" } } },
+    { "name": "List Todos", "request": { "method": "GET", "url": { "raw": "{{base}}/api/todos", "host": ["{{base}}"], "path": ["api","todos"] } } },
+    { "name": "Get Todo by Id", "request": { "method": "GET", "url": { "raw": "{{base}}/api/todos/:id", "host": ["{{base}}"], "path": ["api","todos",":id"] } } },
+    { "name": "Update Todo",
+      "request": { "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{base}}/api/todos/:id", "host": ["{{base}}"], "path": ["api","todos",":id"] },
+        "body": { "mode": "raw",
+          "raw": "{\n  \"title\": \"Plugga mer\",\n  \"description\": \"Spring + Mongo + tester\",\n  \"status\": \"IN_PROGRESS\",\n  \"dueDate\": \"2025-10-01\"\n}" } } },
+    { "name": "Delete Todo", "request": { "method": "DELETE", "url": { "raw": "{{base}}/api/todos/:id", "host": ["{{base}}"], "path": ["api","todos",":id"] } } }
+  ],
+  "variable": [{ "key": "base", "value": "http://localhost:8080" }]
+}
